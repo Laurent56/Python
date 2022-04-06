@@ -1,8 +1,5 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[38]:
-
+# All code is by Laurent Weichberger
+# laurent (dot) weichberger (at) collibra (dot) com
 
 # Need this for median() function
 import statistics
@@ -41,7 +38,7 @@ print('all data', ordered_data)
 # So this old indexing code doesn't work
 
 
-# in an odd mumber of elements in a list, the median is found
+# In an odd mumber of elements in a list, the median is found
 # if length / 2 has a remainder it is odd number of elements
 # if length / 2 has no remainder it is even number of elements
 # Need to treat even and odd number of values differently for this to work
@@ -86,9 +83,10 @@ print('IQR value = ', IQR)
 not_outliers = [(Q1 - 1.5 * IQR),(Q3 + 1.5 * IQR)]
 print('Within this range of values are NOT outliers [low, high]:', not_outliers)
 
+foundOutlier = False
 # Check for outliers in the given dataset
 for value in ordered_data:
-    foundOutlier = False
+    
     #low_check
     if value < not_outliers[0]:
         print('I just found a low Outlier!:', value)
@@ -101,11 +99,7 @@ if (foundOutlier):
     print('I did find at least one Outlier today, Woo hoo!!')
 else:
     print('I dont see any outliers in this Dataset...')
-
 # Done
-
-
-# In[ ]:
 
 
 
